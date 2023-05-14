@@ -1,7 +1,7 @@
 name: debounce_hook
 description: A Flutter package that helps debouncing.
 version: 0.0.1
-homepage:
+homepage: https://github.com/Abduraimbek/debounce_hook
 
 environment:
   sdk: '>=3.0.0 <4.0.0'

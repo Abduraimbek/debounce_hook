@@ -11,29 +11,43 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Debounce API calls or Expensive Operations.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+You can use it for debouncing onChanged of TextField.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To install the package run following command:
+
+```terminal
+flutter pub add debounce_hook
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Common useage as follows.
 
 ```dart
-const like = 'sample';
+class MyWidget extends HookWidget {
+  const MyWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final debounce = useDebounce<String>(
+      // in milliseconds
+      debounceDelay: 500,
+      callback: (value) {
+        // do API call or a expensive computation
+      },
+    );
+
+    return TextField(
+      onChanged: (value) {
+        debounce.onChanged(value);
+      },
+    );
+  }
+}
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
