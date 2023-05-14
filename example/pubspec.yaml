@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   debounce_hook:
     path: ../
+  flutter_hooks: ^0.18.6
 
 dev_dependencies:
   flutter_test:

@@ -45,6 +45,8 @@ class MyWidget extends HookWidget {
 
     return TextField(
       onChanged: (value) {
+        // Common example of using debounce is using `onChanged` of
+        // `TextField`.
         debounce.onChanged(value);
       },
     );
